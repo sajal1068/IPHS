@@ -264,7 +264,7 @@
         .iconBox{            
             width: 100%;
             min-height: 100px;
-            padding: 15px 10px;
+            padding: 0 10px;
             border-radius: 4px;
             display: flex;
             flex-wrap: wrap;
@@ -362,14 +362,16 @@
         }
         @media (max-width: 575.98px) { 
             ul.countBox li {
-                width: calc(33% - 5px);
+                width: calc(33% - 3px);
             }
             .logoSection img{
                 height: 60px;
             }
             .iconBox {
-                min-height: 150px;
-                padding: 10px 15px;
+                min-height: 150px;               
+            }
+            .iconBox strong{
+                font-size: 0.99rem;
             }
          }
     </style>
@@ -420,7 +422,7 @@
              <li class="blue">
                 <div class="iconBox">
                     <a href="" class="link">
-                        <span>IPHS DASHBOARD
+                        <span>IPHS Dashboard
                         Login</span>
                     </a>
                 </div>  
