@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IPHS</title>
+    <style>       
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(fonts/Poppins-Medium.ttf)format('ttf');
+        }
+
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(fonts/Poppins-Medium.ttf)format('ttf');
+        }
+
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(fonts/Poppins-Regular.ttf)format('ttf');
+        }
+
+        @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(fonts/Poppins-Light.ttf)format('ttf');
+        }
+
+        :root{
+            --blue:#132573; 
+            --lightyellow:#F8E6CE;
+            --blue02: #1B97E2;
+            --red:#DA392F;
+        }
+   
+        ul{
+            list-style: none;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+        .imageBox{
+            padding: 10px auto;
+        }
+        .imageBox img{
+            border: solid 5px #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+        .imageBox img:hover{
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        .w-100{
+            width: 100%;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .container {
+                max-width: 1140px;
+                margin: auto;
+                width: 100%;
+        }
+        .header{
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+            border-top: solid 2px var(--blue02);
+        }
+       
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        ul.logoSection{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }       
+
+        .subHeadings{
+            color: var(--blue);
+            font-family: Poppins;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            position: relative;
+            padding-bottom: 10px;
+            margin: 25px 0 25px;
+        }
+        .subHeadings::after{
+            position: absolute;
+            content: '';
+            width: 50px;
+            height: 5px;
+            background: var(--blue);
+            top:100%;
+            left: 0;
+        }
+        .subHeadings::before{
+            position: absolute;
+            content: '';
+            width: 63px;
+            height: 1px;
+            background: #21B8FB;
+            top:calc(100% + 2px);
+            left: 50px;
+        }
+        .pageTitle{
+            display: block;
+            color: #223645;     
+            font-size: 2.0rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.2;
+            text-transform: capitalize;
+            padding: 35px 0 40px;
+            position: relative;
+        }
+        .pageTitle::after{
+            position: absolute;
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--red);
+            top: 75%;
+            left: 0;
+        }
+
+        ul.listStyle li{
+            border-radius: 4px;
+            line-height: 1.5;
+            position: relative;
+            background: #f7f8fa;
+            /* border-left: 5px solid #e4e5e7; */
+            /* border-left: 5px solid  #21B8FB;   */
+            border-left: 5px solid #a7cf7c  ;    
+            border-right: 1px solid #a7cf7c  ;    
+            display: block;    
+            font-size: 0.99rem;
+            padding: 10px;
+            text-align: left;   
+            margin-bottom: 5px;
+            color:#101010;
+        }
+        ul.listStyle li::after{
+            position: absolute;
+            content: '';
+
+        }
+
+        .vision {
+            position: relative;
+            min-height: 50px;
+            background: #f7f8fa;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin: 10px 0;
+            line-height: 1.5;
+            border-right:solid 1px var(--blue02);
+        }
+        .vision::after {
+            position: absolute;
+            content: '';
+            width: 5px;
+            height: 100%;
+            background: var(--blue02);
+            left: 0;
+        }
+
+        ul.objectives{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        ul.objectives li{   
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--lightyellow);
+            margin-bottom: 5px;
+            align-items: center;
+            min-height: 50px;
+            box-sizing: border-box;
+            position: relative;
+            padding: 5px 10px;
+            color: #323232;
+            font-size: 0.99rem;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: capitalize;
+            line-height: 1.35;
+        }
+        ul.objectives li strong{
+            padding: 0 10px 0 0;
+           color: #FFA523;
+        }
+        ul.objectives li::after{
+            content: '';
+            position: absolute;
+            background-color: #FFA523;
+            background-position: center;
+            width: 5px;
+            height: 100%;
+            left: 0;  
+        }
+
+        ul.objectives li::before{
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            right: 0;        
+        }
+        ul.countBox{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: inherit;
+            color:#ffffff;
+            margin: 15px 0;
+           
+        }
+        ul.countBox li{
+            width: calc(33% - 15px);
+        }
+
+        ul.countBox li.green .iconBox{
+            background:#89c149
+        }
+        ul.countBox li.orange .iconBox{
+            background:#fe7926
+        }
+        ul.countBox li.blue .iconBox{
+            background:#32458a
+        }
+
+        .iconBox{            
+            width: 100%;
+            min-height: 100px;
+            padding: 15px 10px;
+            border-radius: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all 0.3s ease 0s;
+            border: solid #ece7e7 1px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+
+        .iconBox strong{
+            font-size: 1.6rem;
+        }
+        .iconBox span{
+            font-size: 1.1rem;
+        }
+
+        .iconBox:hover {
+            background: #fff;
+            box-shadow: 2px 2px 15px 0 rgba(135, 135, 135, 0.4);
+            transition: all 0.5s ease 0s;
+        }
+        .iconBox a{
+            display: inline;
+            font-size: 0.99rem;
+            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+
+
+        .link{
+            width: 100%;
+            position: relative;
+        }
+        .link span {           
+            position: relative;           
+        }
+        .link span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            border-radius: 5px;
+            height: 0.05em;
+            bottom: 0;
+            left: 0;
+            background: currentcolor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .link:hover span::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .footer{
+            border-top: solid 2px var(--blue02);
+            width: 100%;
+            padding: 15px 0;
+            background: #e9eaec;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 15px;;
+            
+        }
+        .footer img{
+            height: 50px;
+        }
+        .footer p{
+                text-align: center;
+        }
+        .footer p a{
+            text-decoration: none;
+
+        }
+
+        @media (max-width: 1199.98px) { 
+            .container{
+                padding: 0 15px;
+            }
+        }
+        @media (max-width: 767.98px) { 
+            .iconBox {
+                min-height: 130px;
+            }
+        }
+        @media (max-width: 575.98px) { 
+            ul.countBox li {
+                width: calc(33% - 5px);
+            }
+         }
+    </style>
+  </head>
+  <body>
+
+    <section class="header">
+        <nav>
+            <div class="container">
+                <ul class="logoSection">
+                    <li>
+                        <img src="ministry_of_health_india.svg" class="img-fluid" />
+                    </li>
+                    <li>
+                        <img src="nhm.svg" class="img-fluid" />
+                    </li>
+                    <li>
+                        <img src="nhsrc-logo.png" class="img-fluid" />
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <main>
+        <div class="container">
+           <div class="pageTitle">INDIAN PUBLIC HEALTH STANDARDS</div>
+
+           <div class="imageBox w-100 text-center">
+            <img src="books.jpg" class="img-fluid">
+           </div>
+
+           <ul class="countBox">
+             <li class="green">
+                <div class="iconBox">
+                    <strong>2,40,000</strong>
+                    <span>Total Health Facility</span>
+                </div>                
+             </li>
+             <li class="orange">
+                <div class="iconBox">
+                    <strong>28,000</strong>
+                    <span>Assessed Health Facility</span>
+                </div>  
+                
+                
+             </li>
+             <li class="blue">
+                <div class="iconBox">
+                    <a href="" class="link">
+                        <span>IPHS DASHBOARD
+                        Login</span>
+                    </a>
+                </div>  
+                
+
+             </li>
+            </ul>
+
+
+           <div class="subHeadings">
+                100-Day Plan for Comprehensive IPHS Assessment and Compliance: 
+           </div> 
+
+            <ul class="listStyle">
+                <li>The Indian Public Health Standards (IPHS) are essential benchmarks that ensure the delivery of minimum essential services through public healthcare facilities, including District Hospitals, Sub-District Hospitals, Community Health Centers, Primary Health Centers, and Ayushman Arogya Mandir ( erstwhile Sub Health centres). </li>
+
+                <li>Developed in 2007 and revised in 2012 and 2022, these standards align with recent public health initiatives and are fundamental to our healthcare system. </li>
+
+                <li>The Ministry has been actively implementing the IPHS 2022 guidelines to provide uniform, high-quality health services across all states. Orientation and training completed.</li>
+
+                <li>The 13th  and 14th  Central Council of Health and Family Welfare (CCHFW) have endorsed our goal of achieving IPHS compliance for all health institutions by 2026, demonstrating the government's commitment to this cause.</li>
+            </ul>
+
+            <div class="subHeadings">Key highlights of IPHS: </div> 
+
+            <ul class="listStyle">
+            <li>IPHS sets infrastructure, equipment, and human resources benchmarks, ensuring uniform service levels across all public health facilities.</li>
+            <li>The guidelines outline essential and desirable services, helping states plan and meet these standards.</li>
+            <li>By following these standards, facilities maintain consistent healthcare delivery and improve service quality.
+            </li>
+            <li>IPHS guidelines help evaluate public healthcare facilities at all levels, leading to better health outcomes and increased public trust in the healthcare system.</li>
+           </ul>
+
+           <div class="vision">MoHFW supports states and UTs by providing funding to address identified gaps and ensure facilities meet essential standards through the National Health Mission's conditionality framework. States and UTs are committed to achieving IPHS compliance in 50% of healthcare facilities by 2025-26. Facilities must score 80% or higher to qualify as IPHS compliant.</div>
+
+           <div class="vision">The Ministry has developed an ODK (Open Data Kit) digital tool and a web-based dashboard to facilitate assessments. These tools help states quickly identify gaps and receive targeted support to achieve the required standards.</div>
+
+           <div class="subHeadings">Progress and Plan for 10 and 100 days. </div>
+           <ul class="objectives">
+            <li>
+                <strong>1. Assessment:</strong>  As of 5th June 2024, 19,130 out of 212,062 public health institutions have been accessed.We aim to complete assessments: 
+            </li>
+           </ul>
+           
+
+           
+
+           <ul class="listStyle">
+            <li>In the first 10 days:  50000 of all public Health facilities in 10 days and
+            </li>
+            <li>All public health facilities within 100 days of the new government's formation.</li>
+           </ul>
+
+           <ul class="objectives">
+            <li><strong>2. Compliance:</strong> As of June 5th, 2024, 6,590 of 212,062 health institutions are IPHS compliant.</li>
+           </ul>
+            
+
+           <ul class="listStyle">
+            <li>In the first 10 days: 10000 of all the public health facilities in 10 days </li>
+            <li>We aim to make 70,000 health institutions compliant within the first 100 days of the new government's formation.         </li>
+            <li>Further, we plan to Launch the IPHS dashboard in the first 10 days.</li>
+           </ul>
+
+           <div class="vision">Implementing IPHS is vital for improving healthcare delivery nationwide and ensuring all citizens have access to high-quality health services. The IPHS guidelines help states plan and meet essential standards, leading to better health outcomes and increased public trust in the healthcare system.</div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="NIC-logo.svg" class="img-fluid">
+            <p>Site is designed and hosted by <a href="https://www.nic.in/" target="_blank" class="link"><span>National Informatics Centre (NIC)</span></a>.</p>
+        </div>
+    </footer>
+    
+
+    
+  </body>
+</html>
